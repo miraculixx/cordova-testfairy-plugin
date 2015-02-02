@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.testfairy.cordova" version="1.2">
+    <name>testfairy</name>
+    <description>Cordova Testfairy plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,testfairy</keywords>
+    <js-module src="www/testfairy.js" name="TestFairy">
+        <clobbers target="TestFairy" />
+    </js-module>
+    <platform name="ios">
+        <hook type="before_plugin_install" src="scripts/ios_download_testfairy.sh" />
+        <config-file target="config.xml" parent="/*">
+            <feature name="TestFairy">
+                <param name="ios-package" value="CDVTestFairy" onload="true"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVTestFairy.h" />
+        <source-file src="src/ios/CDVTestFairy.m" />
+        <header-file src="src/ios/TestFairy/TestFairy.h" />
+        <source-file src="src/ios/TestFairy/libTestFairy.a" framework="true" />
+        <framework src="libTestFairy.a" />
+        <framework src="CoreMedia.framework" />
+        <framework src="CoreMotion.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="SystemConfiguration.framework" />
+    </platform>
+    <platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+		  <feature name="TestFairy">
+		    <param name="android-package" value="com.testfairy.cordova.CDVTestFairy"/>
+		  </feature>
+		</config-file>
+		<source-file src="src/android/CDVTestFairy.java" target-dir="src/com/testfairy/cordova/"/>
+    </platform>
+</plugin>
