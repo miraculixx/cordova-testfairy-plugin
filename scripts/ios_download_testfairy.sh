@@ -20,7 +20,7 @@ SDK_URL=https://app.testfairy.com/sdk/ios/download/latest/
 PLUGIN_DIR=./plugins/com.testfairy.cordova
 
 # the target filename for download
-TARGET_ZIP=/tmp/TestFairySDK-1-2.zip
+TARGET_ZIP=/tmp/TestFairySDK-latest.zip
 
 # the target path where to extract the SDK zip
 TARGET_SRC=$PLUGIN_DIR/src/ios/TestFairy
