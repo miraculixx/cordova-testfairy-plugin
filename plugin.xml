@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.testfairy.cordova" version="1.2">
+        id="com.testfairy.cordova" version="1.4">
     <name>testfairy</name>
     <description>Cordova Testfairy plugin</description>
     <license>MIT</license>
