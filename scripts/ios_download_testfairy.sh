@@ -14,7 +14,7 @@
 #
 
 # the SDK fully qualified URL, including the actual filename
-SDK_URL=https://app.testfairy.com/ios-sdk/TestFairySDK-1.2.zip
+SDK_URL=https://app.testfairy.com/sdk/ios/download/latest/
 
 # the relative directory from the project root 
 PLUGIN_DIR=./plugins/com.testfairy.cordova
@@ -28,7 +28,7 @@ TARGET_SRC=$PLUGIN_DIR/src/ios/TestFairy
 # be nice and download only if we didn't yet
 if [ ! -f $TARGET_ZIP ]; then
  echo "[INFO] Downloading Testfairy SDK for iOS from $SDK_URL to $TARGET_ZIP"
- curl $SDK_URL -o $TARGET_ZIP 
+ curl -L $SDK_URL -o $TARGET_ZIP 
 fi
 
 echo "[INFO] Installing Testfairy SDK for iOS from $TARGET_ZIP to $TARGET_SRC"
